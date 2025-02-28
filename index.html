@@ -310,103 +310,215 @@
             line-height: 1.7;
         }
         
-        /* Pills Section */
-        .pills {
-            padding: 6rem 5%;
-            background-color: var(--secondary-color);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .pills::before {
-            content: '';
-            position: absolute;
-            bottom: -150px;
-            left: -150px;
-            width: 300px;
-            height: 300px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23ff3a3a' d='M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9c0 .4 0 .7 0 1.1v64c0 26.5 21.5 48 48 48h48V464c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64V464c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-64c0-.4 0-.7 0-1.1zM208 160c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32zm128 64c-17.7 0-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32z'/%3E%3C/svg%3E") center/contain no-repeat;
-            opacity: 0.05;
-            z-index: 0;
-        }
-        
-        .pills-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .pills-image {
-            position: relative;
-            height: 400px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.6);
-        }
-        
-        .pill-container {
-            display: flex;
-            gap: 30px;
-        }
-        
-        .pill-large {
+				.pills {
+        padding: 6rem 5%;
+        background-color: var(--secondary-color);
+        position: relative;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('background.webp');
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    
+    .pills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+    
+    .pill-card {
+        border-radius: 15px;
+        padding: 2.5rem;
+        text-align: center;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1;
+        min-height: 600px;
+    }
+    
+    .pill-card.black {
+        background: linear-gradient(135deg, #222, #000);
+        border-left: 5px solid #000;
+    }
+    
+    .pill-card.red {
+        background: linear-gradient(135deg, #330000, #660000);
+        border-left: 5px solid #ff0000;
+    }
+    
+    .pill-card.blue {
+        background: linear-gradient(135deg, #000033, #000066);
+        border-left: 5px solid #0000ff;
+    }
+    
+    .pill-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+        z-index: -1;
+    }
+    
+    .pill-card:hover {
+        transform: translateY(-15px) scale(1.03);
+    }
+    
+    .pill-card.black:hover {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.6);
+    }
+    
+    .pill-card.red:hover {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 0, 0, 0.3);
+    }
+    
+    .pill-card.blue:hover {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 255, 0.3);
+    }
+    
+    .pill-icon {
+        margin-bottom: 2rem;
+        perspective: 1000px;
+    }
+    
+    .pill-3d {
+        width: 120px;
+        height: 60px;
+        border-radius: 30px;
+        position: relative;
+        transform-style: preserve-3d;
+        transform: rotateX(15deg) rotateY(15deg);
+        transition: all 0.5s ease;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+    
+    .pill-card:hover .pill-3d {
+        transform: rotateX(30deg) rotateY(30deg) rotateZ(5deg);
+    }
+    
+    .black-pill {
+        background: linear-gradient(to bottom, #000000, #333333);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    .red-pill {
+        background: linear-gradient(to bottom, #ff0000, #990000);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.5);
+    }
+    
+    .blue-pill {
+        background: linear-gradient(to bottom, #0000ff, #000099);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 255, 0.5);
+    }
+    
+    .pill-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        display: inline-block;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .pill-description {
+        line-height: 1.8;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+        text-align: right;
+        flex-grow: 1;
+    }
+    
+    .pill-btn {
+        display: inline-block;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        border: 2px solid;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+    
+    .black-btn {
+        background-color: #000;
+        color: white;
+        border-color: #333;
+    }
+    
+    .red-btn {
+        background-color: #ff0000;
+        color: white;
+        border-color: #ff3333;
+    }
+    
+    .blue-btn {
+        background-color: #0000ff;
+        color: white;
+        border-color: #3333ff;
+    }
+    
+    .pill-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: all 0.6s ease;
+        z-index: -1;
+    }
+    
+    .pill-btn:hover {
+        transform: translateY(-5px);
+    }
+    
+    .pill-btn:hover::before {
+        left: 100%;
+    }
+    
+    .black-btn:hover {
+        background-color: transparent;
+        color: #fff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .red-btn:hover {
+        background-color: transparent;
+        color: #ff0000;
+        box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+    }
+    
+    .blue-btn:hover {
+        background-color: transparent;
+        color: #0000ff;
+        box-shadow: 0 5px 15px rgba(0, 0, 255, 0.3);
+    }
+    
+    @media (max-width: 768px) {
+        .pill-3d {
             width: 100px;
-            height: 200px;
-            border-radius: 50px;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            transition: all 0.3s ease;
+            height: 50px;
         }
         
-        .pill-large:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+        .pill-title {
+            font-size: 1.75rem;
         }
         
-        .red-pill {
-            background-color: var(--pill-color-1);
+        .pill-description {
+            font-size: 1rem;
         }
-        
-        .black-pill {
-            background-color: var(--pill-color-2);
-        }
-        
-        .pills-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .pills-content h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            right: 0;
-            width: 60px;
-            height: 4px;
-            background-color: var(--accent-color);
-        }
-        
-        .pills-text {
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-            opacity: 0.9;
-        }
-        
-        .fact-title {
-            font-size: 1.3rem;
-            color: var(--accent-color);
-            margin-bottom: 0.5rem;
-            margin-top: 2rem;
-        }
+    }
         
         /* Facts Section */
         .facts {
@@ -733,29 +845,40 @@
         </div>
     </section>
     
-    <!-- Pills Section -->
-    <section class="pills" id="pills">
-        <div class="pills-container">
-            <div class="pills-image">
-                <div class="pill-container">
-                    <div class="pill-large black-pill"></div>
-                    <div class="pill-large red-pill"></div>
-                </div>
-            </div>
-            <div class="pills-content">
-                <h2>الحبة السوداء والحمراء</h2>
-                <p class="pills-text">تمثل الحبة السوداء والحمراء الخيار الذي سيغير حياتك إلى الأبد. إنها الاختيار بين العيش في الظلام أو مواجهة الحقيقة القاسية.</p>
-                
-                <h4 class="fact-title">الحبة الحمراء</h4>
-                <p class="pills-text">تمثل رحلة الاستيقاظ والمعرفة. عندما تختار الحبة الحمراء، فإنك تختار رؤية العالم كما هو حقًا، بكل ما فيه من حقائق صعبة ومعقدة.</p>
-                
-                <h4 class="fact-title">الحبة السوداء</h4>
-                <p class="pills-text">تمثل قبول القيود والبقاء في نطاق الراحة المألوف. هذا اختيار مغرٍ للبقاء في الظلام، لكنه يحرمك من معرفة الحقيقة الكاملة.</p>
-                
-                <p class="pills-text">الاختيار يعود إليك، لكن بمجرد اتخاذه، لا يمكن التراجع عنه.</p>
-            </div>
-        </div>
-    </section>
+<!-- Pills Section -->
+<section class="pills" id="pills">
+	<h2 class="section-title">حبوب الحقيقة</h2>
+	<div class="pills-container">
+			<div class="pills-grid">
+					<div class="pill-card black">
+							<div class="pill-icon">
+									<div class="pill-3d black-pill"></div>
+							</div>
+							<h3 class="pill-title">الحبة السوداء</h3>
+							<p class="pill-description"> الحبه السوداء: هي الحبه التي تأخذك من مستنقع الروتين الي التطوير .. تطوير شكلك ومظهرك وجسدك وحتي صحتك .. شديده حد الموت ولكن عليك تقبل واقعها لأنها بنسبه ٩٥ ٪ واقع ملموس يعيشه العالم أجمع .. ابتلاعك لها سوف يجعل منك شخصا جديدا كليا ليس له مثيل</p>
+							<a href="#" class="pill-btn black-btn">اختر الحبة السوداء</a>
+					</div>
+					
+					<div class="pill-card red">
+							<div class="pill-icon">
+									<div class="pill-3d red-pill"></div>
+							</div>
+							<h3 class="pill-title">الحبة الحمراء</h3>
+							<p class="pill-description">الحبة الحمراء هي رمز للحقيقة القاسية. عندما تختار الحبة الحمراء، فإنك تختار مواجهة الواقع بكل صعوباته وقسوته. هي اختيار الاستيقاظ من الوهم والعيش في الحقيقة مهما كانت مؤلمة. تفتح عينيك على الطبيعة الحقيقية للعلاقات والمجتمع، وتمنحك القدرة على رؤية العالم كما هو فعلاً.</p>
+							<a href="#" class="pill-btn red-btn">اختر الحبة الحمراء</a>
+					</div>
+
+					<div class="pill-card blue">
+							<div class="pill-icon">
+									<div class="pill-3d blue-pill"></div>
+							</div>
+							<h3 class="pill-title">الحبة الزرقاء</h3>
+							<p class="pill-description">الحبة الزرقاء تمثل العيش في النسيان والوهم. عندما تختار الحبة الزرقاء، فأنت تفضل البقاء في عالم من الأوهام المريحة بدلاً من مواجهة الحقائق القاسية. إنها القبول بالصورة التي يرسمها المجتمع والإعلام عن العلاقات والنجاح، متجاهلاً الحقائق الأساسية التي قد تكون مزعجة ولكنها حقيقية.</p>
+							<a href="#" class="pill-btn blue-btn">اختر الحبة الزرقاء</a>
+					</div>
+			</div>
+	</div>
+</section>
     
     <!-- Facts Section -->
     <section class="facts" id="facts">
