@@ -1113,6 +1113,37 @@
 				}
 			}
 		</style>
+		<style>
+			/* Form Success Message */
+			.form-success {
+					background: linear-gradient(135deg, #111, #000);
+					border-radius: 15px;
+					padding: 3rem 2rem;
+					text-align: center;
+					box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+					max-width: 600px;
+					margin: 0 auto;
+					display: none;
+			}
+			
+			.success-icon {
+					font-size: 4rem;
+					color: #00cc66;
+					margin-bottom: 1.5rem;
+			}
+			
+			.form-success h3 {
+					font-size: 1.8rem;
+					margin-bottom: 1rem;
+					color: #fff;
+			}
+			
+			.form-success p {
+					font-size: 1.1rem;
+					color: #ccc;
+			}
+	</style>
+	
 </head>
 <body>
 	<!-- Coming Soon Modal -->
@@ -1273,56 +1304,66 @@
 	</div>
 </section>
     
-    <!-- Facts Section -->
-    <section class="facts" id="facts">
-        <h2 class="section-title">حقائق مذهلة</h2>
-        <div class="facts-list">
-            <div class="fact-card">
-                <div class="fact-number">01</div>
-                <p class="fact-description">تبين الدراسات أن 80% من الأشخاص الذين يختارون الحبة الحمراء يشهدون تغييرًا جذريًا في نظرتهم للعالم خلال الأسبوع الأول.</p>
-            </div>
-            <div class="fact-card">
-                <div class="fact-number">02</div>
-                <p class="fact-description">97% من الأشخاص الذين اختاروا الحبة السوداء يستمرون في اتباع نفس الروتين اليومي دون تحديات جديدة أو نمو شخصي.</p>
-            </div>
-            <div class="fact-card">
-                <div class="fact-number">03</div>
-                <p class="fact-description">يبلغ متوسط زيادة الإنتاجية بعد تناول الحبة الحمراء 65% خلال الشهر الأول، مع التركيز على المهام الأكثر أهمية وذات المعنى.</p>
-            </div>
-            <div class="fact-card">
-                <div class="fact-number">04</div>
-                <p class="fact-description">75% من متخذي القرارات الناجحين في العالم يؤكدون أنهم واجهوا "لحظة الحبة الحمراء" في حياتهم المهنية أدت إلى تغيير مسارهم.</p>
-            </div>
-            <div class="fact-card">
-                <div class="fact-number">05</div>
-                <p class="fact-description">المتوسط العالمي للاختيار بين الحبتين يميل بنسبة 70% نحو الحبة السوداء، مما يعكس ميل البشر الطبيعي نحو الراحة والاستقرار.</p>
-            </div>
-            <div class="fact-card">
-                <div class="fact-number">06</div>
-                <p class="fact-description">تظهر الأبحاث الحديثة أن اختيار الحبة الحمراء يرتبط بزيادة بنسبة 40% في الإبداع ومهارات حل المشكلات المعقدة.</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2 class="section-title">تواصل معنا</h2>
-        <form class="contact-form">
-            <div class="form-group">
-                <label for="name" class="form-label">الاسم</label>
-                <input type="text" id="name" class="form-input" required>
-            </div>
-            <div class="form-group">
-                <label for="email" class="form-label">البريد الإلكتروني</label>
-                <input type="email" id="email" class="form-input" required>
-            </div>
-            <div class="form-group">
-                <label for="message" class="form-label">الرسالة</label>
-                <textarea id="message" class="form-input form-textarea" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">إرسال الرسالة</button>
-        </form>
-    </section>
+<!-- Facts Section -->
+<section class="facts" id="facts">
+	<h2 class="section-title">حقائق الحبوب</h2>
+	<div class="facts-list">
+			<div class="fact-card">
+					<div class="fact-number">01</div>
+					<p class="fact-description">أظهرت الإحصائيات أن 78% من الرجال الذين تبنوا مفاهيم الحبة السوداء شهدوا تحسناً ملحوظاً في مظهرهم الجسدي خلال 6 أشهر بفضل الالتزام بالتمارين والنظام الغذائي.</p>
+			</div>
+			<div class="fact-card">
+					<div class="fact-number">02</div>
+					<p class="fact-description">85% من متبعي الحبة الحمراء أبلغوا عن زيادة في الثقة بالنفس والقدرة على فهم ديناميكيات العلاقات بشكل أفضل، مما أدى إلى تحسن في حياتهم الاجتماعية.</p>
+			</div>
+			<div class="fact-card">
+					<div class="fact-number">03</div>
+					<p class="fact-description">أكثر من 92% من الرجال الذين يعيشون حياة "الحبة الزرقاء" يستمرون في المعاناة من مشاكل في العلاقات وخيبات أمل متكررة دون فهم السبب الحقيقي وراءها.</p>
+			</div>
+			<div class="fact-card">
+					<div class="fact-number">04</div>
+					<p class="fact-description">الرجال الذين تبنوا فلسفة الحبة السوداء يقضون في المتوسط 8 ساعات أسبوعياً في تطوير أنفسهم جسدياً وعقلياً، مقارنة بساعتين فقط لمن لم يتبنوا هذه الفلسفة.</p>
+			</div>
+			<div class="fact-card">
+					<div class="fact-number">05</div>
+					<p class="fact-description">73% من الرجال الناجحين مالياً واجتماعياً يعترفون بأنهم اعتمدوا بعض مفاهيم الحبة الحمراء في التعامل مع الجنس الآخر والمجتمع، مما ساهم في تحقيق نجاحهم.</p>
+			</div>
+			<div class="fact-card">
+					<div class="fact-number">06</div>
+					<p class="fact-description">أكثر من 65% من الرجال الذين اتخذوا الخطوة نحو الحبة السوداء ركزوا على تطوير مهاراتهم المالية وصحتهم، مما أدى إلى زيادة دخلهم بمعدل 40% خلال عامين.</p>
+			</div>
+	</div>
+</section>
+<!-- Contact Section -->
+<section class="contact" id="contact">
+	<h2 class="section-title">تواصل معنا</h2>
+	<form class="contact-form" action="https://formspree.io/f/gnmillion@gmail.com" method="POST">
+			<div class="form-group">
+					<label for="name" class="form-label">الاسم</label>
+					<input type="text" id="name" name="name" class="form-input" required>
+			</div>
+			<div class="form-group">
+					<label for="email" class="form-label">البريد الإلكتروني</label>
+					<input type="email" id="email" name="email" class="form-input" required>
+			</div>
+			<div class="form-group">
+					<label for="message" class="form-label">الرسالة</label>
+					<textarea id="message" name="message" class="form-input form-textarea" required></textarea>
+			</div>
+			<input type="hidden" name="_subject" value="رسالة جديدة من موقع GN">
+			<input type="hidden" name="_language" value="ar">
+			<button type="submit" class="submit-btn">إرسال الرسالة</button>
+	</form>
+	
+	<!-- Success Message -->
+	<div id="formSuccess" class="form-success" style="display: none;">
+			<div class="success-icon">
+					<i class="fas fa-check-circle"></i>
+			</div>
+			<h3>تم إرسال رسالتك بنجاح!</h3>
+			<p>سنرد عليك في أقرب وقت ممكن.</p>
+	</div>
+</section>
     
     <!-- Footer -->
     <footer class="footer">
@@ -1338,6 +1379,37 @@
         </div>
         <p class="copyright">© 2025 GN. جميع الحقوق محفوظة.</p>
     </footer>
+		<script>
+			// Handle form submission
+			document.querySelector('.contact-form').addEventListener('submit', function(e) {
+					e.preventDefault();
+					
+					const form = this;
+					const formData = new FormData(form);
+					
+					fetch('https://formspree.io/f/mzzdnjog', {
+							method: 'POST',
+							body: formData,
+							headers: {
+									'Accept': 'application/json'
+							}
+					})
+					.then(response => {
+							if (response.ok) {
+									// Show success message
+									form.style.display = 'none';
+									document.getElementById('formSuccess').style.display = 'block';
+									form.reset();
+							} else {
+									throw new Error('Form submission failed');
+							}
+					})
+					.catch(error => {
+							alert('عذراً، حدث خطأ أثناء إرسال الرسالة. يرجى المحاولة مرة أخرى لاحقاً.');
+							console.error(error);
+					});
+			});
+	</script>
 		<script>
 			// Get the coming soon modal
 			const comingSoonModal = document.getElementById("comingSoonModal");
