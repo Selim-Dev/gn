@@ -784,9 +784,144 @@
                 height: 120px;
             }
         }
+				  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .modal-content {
+    background: linear-gradient(135deg, #111, #000);
+    margin: 15% auto;
+    padding: 2rem;
+    border: 2px solid #ff0000;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
+    position: relative;
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+  
+  .modal.active {
+    opacity: 1;
+    display: block;
+  }
+  
+  .modal.active .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .close-modal {
+    color: #aaa;
+    float: left;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .close-modal:hover {
+    color: #ff0000;
+  }
+  
+  .modal-text {
+    text-align: center;
+  }
+  
+  .modal-text h3 {
+    color: #ff0000;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+  }
+  
+  .modal-text p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+  }
+	 /* Welcome Modal Styles */
+	 .welcome-modal .modal-content {
+    background: linear-gradient(135deg, #222, #111);
+    border: 2px solid #00ff00;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.4);
+  }
+  
+  .welcome-modal .modal-text h3 {
+    color: #00ff00;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .welcome-modal .modal-text p {
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: 700;
+    margin: 1.5rem 0;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  }
+  
+  .confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  .confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color);
+    opacity: 0.7;
+    animation: fall linear forwards;
+  }
+  
+  @keyframes fall {
+    to {
+      transform: translateY(100vh) rotate(720deg);
+    }
+  }
     </style>
 </head>
 <body>
+	<!-- Black/Red Pill Modal -->
+<div id="welcomeModal" class="modal welcome-modal">
+  <div class="modal-content welcome-content">
+    <span class="close-modal">&times;</span>
+    <div class="modal-text">
+      <h3>مرحباً بك في عالم الحقيقة!</h3>
+      <p>أرحب مليوووون</p>
+      <div class="confetti-container"></div>
+    </div>
+  </div>
+</div>
+	<!-- Blue Pill Modal -->
+<div id="bluePillModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="modal-text">
+      <h3>خطأ في الاختيار!</h3>
+      <p>يلا من هنا حيلتها , روح خدها ف**ك وهتيجي تختار التانيين</p>
+    </div>
+  </div>
+</div>
     <!-- Navbar -->
     <nav class="navbar">
         <a href="#" class="logo">
@@ -945,7 +1080,149 @@
         </div>
         <p class="copyright">© 2025 GN. جميع الحقوق محفوظة.</p>
     </footer>
+		<!-- Add this JavaScript code before the closing </body> tag -->
+<script>
+  // Get the welcome modal
+  const welcomeModal = document.getElementById("welcomeModal");
+  
+  // Get the black and red pill cards and buttons
+  const blackPillCard = document.querySelector(".pill-card.black");
+  const redPillCard = document.querySelector(".pill-card.red");
+  const blackPillBtn = document.querySelector(".black-btn");
+  const redPillBtn = document.querySelector(".red-btn");
+  
+  // Get all close buttons
+  const closeButtons = document.querySelectorAll(".close-modal");
+  
+  // Function to open welcome modal
+  function openWelcomeModal() {
+    welcomeModal.style.display = "block";
+    // Use setTimeout to enable transition
+    setTimeout(() => {
+      welcomeModal.classList.add("active");
+      createConfetti();
+    }, 10);
+  }
+  
+  // Function to close modals
+  function closeModals() {
+    document.querySelectorAll(".modal").forEach(modal => {
+      modal.classList.remove("active");
+      setTimeout(() => {
+        modal.style.display = "none";
+      }, 400);
+    });
+  }
+  
+  // Event listeners for black pill
+  blackPillCard.addEventListener("click", openWelcomeModal);
+  blackPillBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    openWelcomeModal();
+  });
+  
+  // Event listeners for red pill
+  redPillCard.addEventListener("click", openWelcomeModal);
+  redPillBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    openWelcomeModal();
+  });
+  
+  // Close buttons event listeners
+  closeButtons.forEach(button => {
+    button.addEventListener("click", closeModals);
+  });
+  
+  // Close modal when clicking outside
+  window.addEventListener("click", function(event) {
+    if (event.target.classList.contains("modal")) {
+      closeModals();
+    }
+  });
+  
+  // Create confetti effect
+  function createConfetti() {
+    const confettiContainer = document.querySelector(".confetti-container");
+    confettiContainer.innerHTML = ""; // Clear previous confetti
     
+    const colors = ["#00ff00", "#ffffff", "#ffff00", "#ff00ff", "#00ffff"];
+    
+    for (let i = 0; i < 100; i++) {
+      const confetti = document.createElement("div");
+      confetti.classList.add("confetti");
+      
+      // Random position
+      const startPositionLeft = Math.random() * 100;
+      
+      // Random size
+      const size = Math.floor(Math.random() * 10) + 5;
+      
+      // Random color
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      
+      // Random rotation
+      const rotation = Math.random() * 360;
+      
+      // Random speed
+      const duration = Math.random() * 3 + 2;
+      
+      // Set styles
+      confetti.style.setProperty("--color", color);
+      confetti.style.left = startPositionLeft + "%";
+      confetti.style.width = size + "px";
+      confetti.style.height = size + "px";
+      confetti.style.transform = `rotate(${rotation}deg)`;
+      confetti.style.animationDuration = duration + "s";
+      
+      confettiContainer.appendChild(confetti);
+    }
+  }
+</script>
+    <!-- Add this JavaScript code before the closing </body> tag -->
+<script>
+  // Get the modal
+  const modal = document.getElementById("bluePillModal");
+  
+  // Get the blue pill card
+  const bluePillCard = document.querySelector(".pill-card.blue");
+  const bluePillBtn = document.querySelector(".blue-btn");
+  
+  // Get the close button
+  const closeBtn = document.querySelector(".close-modal");
+  
+  // Function to open modal
+  function openModal() {
+    modal.style.display = "block";
+    // Use setTimeout to enable transition
+    setTimeout(() => {
+      modal.classList.add("active");
+    }, 10);
+  }
+  
+  // Function to close modal
+  function closeModal() {
+    modal.classList.remove("active");
+    setTimeout(() => {
+      modal.style.display = "none";
+    }, 400);
+  }
+  
+  // Event listeners
+  bluePillCard.addEventListener("click", openModal);
+  bluePillBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    openModal();
+  });
+  
+  closeBtn.addEventListener("click", closeModal);
+  
+  // Close modal when clicking outside
+  window.addEventListener("click", function(event) {
+    if (event.target == modal) {
+      closeModal();
+    }
+  });
+</script>
     <script>
         // Mobile Menu Toggle
         const menuToggle = document.querySelector('.menu-toggle');
