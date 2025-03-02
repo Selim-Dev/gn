@@ -898,9 +898,247 @@
       transform: translateY(100vh) rotate(720deg);
     }
   }
+
+	 /* Books Section Styles */
+	 .books {
+        padding: 6rem 5%;
+        background-color: var(--primary-color);
+        position: relative;
+    }
+    
+    .books::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5C15.67 5 4 16.67 4 31c0 14.33 11.67 26 26 26s26-11.67 26-26C56 16.67 44.33 5 30 5zm0 48c-12.15 0-22-9.85-22-22s9.85-22 22-22 22 9.85 22 22-9.85 22-22 22z' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E") repeat;
+        z-index: 0;
+    }
+    
+    .book-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 3rem;
+        margin-top: 4rem;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .book-card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 800px;
+        background: linear-gradient(135deg, #222, #111);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        transition: all 0.4s ease;
+    }
+    
+    .book-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 0, 0, 0.2);
+    }
+    
+    @media (min-width: 768px) {
+        .book-card {
+            flex-direction: row;
+        }
+    }
+    
+    .book-cover {
+        position: relative;
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+    
+    @media (min-width: 768px) {
+        .book-cover {
+            width: 40%;
+            max-width: 300px;
+        }
+    }
+    
+    .book-cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: all 0.5s ease;
+    }
+    
+    .book-card:hover .book-cover img {
+        transform: scale(1.05);
+    }
+    
+    .book-overlay {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    
+    .bestseller-tag {
+        display: inline-block;
+        background-color: var(--accent-color);
+        color: white;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        font-weight: 700;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+    }
+    
+    .book-info {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .book-title {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        color: #fff;
+    }
+    
+    .book-author {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        color: #aaa;
+    }
+    
+    .book-rating {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        direction: ltr;
+        justify-content: flex-end;
+    }
+    
+    .book-rating i {
+        color: gold;
+        margin-left: 0.2rem;
+    }
+    
+    .book-rating span {
+        margin-left: 0.5rem;
+        color: #aaa;
+        direction: rtl;
+    }
+    
+    .book-description {
+        line-height: 1.8;
+        margin-bottom: 2rem;
+        color: #ddd;
+        text-align: right;
+    }
+    
+    .book-price {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+    
+    .price {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--accent-color);
+    }
+    
+    .old-price {
+        font-size: 1.2rem;
+        color: #aaa;
+        text-decoration: line-through;
+    }
+    
+    .book-btn {
+        display: inline-block;
+        background-color: var(--accent-color);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        text-transform: uppercase;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        align-self: flex-end;
+        box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+        border: 2px solid var(--accent-color);
+    }
+    
+    .book-btn:hover {
+        background-color: transparent;
+        color: var(--accent-color);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
+    }
     </style>
+		<style>
+			/* Coming Soon Modal Styles */
+			.coming-soon-modal .modal-content {
+				background: linear-gradient(135deg, #111, #000);
+				border: 2px solid #ffd700;
+				box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+				text-align: center;
+			}
+			
+			.coming-soon-modal .modal-text h3 {
+				color: #ffd700;
+				font-size: 2rem;
+				margin-bottom: 1rem;
+			}
+			
+			.coming-soon-modal .modal-text p {
+				font-size: 2.5rem;
+				color: #fff;
+				font-weight: 700;
+				margin: 1.5rem 0;
+				text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+			}
+			
+			.coming-soon-icon {
+				margin-top: 1.5rem;
+				font-size: 4rem;
+				color: #ffd700;
+				animation: pulse 2s infinite;
+			}
+			
+			@keyframes pulse {
+				0% {
+					transform: scale(1);
+					opacity: 1;
+				}
+				50% {
+					transform: scale(1.1);
+					opacity: 0.7;
+				}
+				100% {
+					transform: scale(1);
+					opacity: 1;
+				}
+			}
+		</style>
 </head>
 <body>
+	<!-- Coming Soon Modal -->
+<div id="comingSoonModal" class="modal coming-soon-modal">
+  <div class="modal-content coming-soon-content">
+    <span class="close-modal">&times;</span>
+    <div class="modal-text">
+      <h3>انتظرونا</h3>
+      <p>قريبا في الأسواق</p>
+      <div class="coming-soon-icon">
+        <i class="fas fa-hourglass-half"></i>
+      </div>
+    </div>
+  </div>
+</div>
 	<!-- Black/Red Pill Modal -->
 <div id="welcomeModal" class="modal welcome-modal">
   <div class="modal-content welcome-content">
@@ -951,7 +1189,38 @@
             <i class="fas fa-chevron-down"></i>
         </a>
     </section>
-    
+    <!-- Books Section -->
+<section class="books" id="books">
+	<h2 class="section-title">مكتبة GN</h2>
+	<div class="book-container">
+			<div class="book-card">
+					<div class="book-cover">
+							<img src="./gn.jpg" alt="Book Cover">
+							<div class="book-overlay">
+									<span class="bestseller-tag">الأكثر مبيعًا</span>
+							</div>
+					</div>
+					<div class="book-info">
+							<h3 class="book-title">فيفتي شيدز اوف جن</h3>
+							<p class="book-author">بقلم: د. احمد الجن</p>
+							<div class="book-rating">
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star-half-alt"></i>
+									<span>(254 تقييم)</span>
+							</div>
+							<p class="book-description">دليلك الشامل لتحقيق التحول الكامل في حياتك. يكشف هذا الكتاب عن أسرار التطوير الشخصي والتغلب على التحديات اليومية للوصول إلى أفضل نسخة من نفسك.</p>
+							<div class="book-price">
+									<span class="price">1000 جنية</span>
+									<span class="old-price">1500 جنية</span>
+							</div>
+							<a href="#" class="book-btn">اشتر الآن</a>
+					</div>
+			</div>
+	</div>
+</section>
     <!-- Features Section -->
     <section class="features" id="features">
         <h2 class="section-title">ما نقدمه</h2>
@@ -1080,7 +1349,44 @@
         </div>
         <p class="copyright">© 2025 GN. جميع الحقوق محفوظة.</p>
     </footer>
-		<!-- Add this JavaScript code before the closing </body> tag -->
+		<script>
+			// Get the coming soon modal
+			const comingSoonModal = document.getElementById("comingSoonModal");
+			
+			// Get the buy button
+			const buyButton = document.querySelector(".book-btn");
+			
+			// Function to open coming soon modal
+			function openComingSoonModal(e) {
+				e.preventDefault();
+				comingSoonModal.style.display = "block";
+				// Use setTimeout to enable transition
+				setTimeout(() => {
+					comingSoonModal.classList.add("active");
+				}, 10);
+			}
+			
+			// Event listener for buy button
+			buyButton.addEventListener("click", openComingSoonModal);
+			
+			// Make sure close functionality works with this modal too
+			document.querySelector("#comingSoonModal .close-modal").addEventListener("click", function() {
+				comingSoonModal.classList.remove("active");
+				setTimeout(() => {
+					comingSoonModal.style.display = "none";
+				}, 400);
+			});
+			
+			// Close modal when clicking outside
+			window.addEventListener("click", function(event) {
+				if (event.target === comingSoonModal) {
+					comingSoonModal.classList.remove("active");
+					setTimeout(() => {
+						comingSoonModal.style.display = "none";
+					}, 400);
+				}
+			});
+		</script>
 <script>
   // Get the welcome modal
   const welcomeModal = document.getElementById("welcomeModal");
