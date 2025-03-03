@@ -1170,6 +1170,347 @@
 			margin-top: 15px;
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 		}
+		/* Articles Section Styles *//* Articles Section Styles */
+.articles {
+    padding: 6rem 5%;
+    background-color: var(--primary-color);
+    position: relative;
+}
+
+.articles-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.article-card {
+    background: linear-gradient(135deg, #222, #111);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    border-right: 4px solid var(--accent-color);
+}
+
+.article-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 0, 0, 0.2);
+}
+
+.article-image {
+    position: relative;
+    height: 580px;
+    overflow: hidden;
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.article-card:hover .article-image img {
+    transform: scale(1.1);
+}
+
+.article-overlay {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1;
+}
+
+.article-tag {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+.featured-tag {
+    background-color: #ffd700;
+    color: #000;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.article-info {
+    padding: 1.5rem;
+}
+
+.article-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+    font-weight: 700;
+    color: #fff;
+}
+
+.article-date {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 1rem;
+}
+
+.article-date i {
+    margin-left: 5px;
+}
+
+.article-excerpt {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #ddd;
+    margin-bottom: 1.5rem;
+}
+
+.article-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--accent-color);
+    color: #fff;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid var(--accent-color);
+}
+
+.article-btn:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2);
+}
+
+/* Article Pages Styles */
+.article-pages-container {
+    background-color: var(--primary-color);
+    min-height: 100vh;
+    padding-bottom: 4rem;
+}
+
+.article-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+    display: none;
+}
+
+.article-back-btn {
+    margin-bottom: 2rem;
+}
+
+.article-back-btn a {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #aaa;
+    transition: all 0.3s ease;
+}
+
+.article-back-btn a:hover {
+    color: var(--accent-color);
+    transform: translateX(5px);
+}
+
+.article-back-btn i {
+    margin-left: 8px;
+    font-size: 0.9rem;
+}
+
+.article-page-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    color: #fff;
+}
+
+.article-page-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    color: #aaa;
+    font-size: 1rem;
+}
+
+.article-page-meta span {
+    display: inline-flex;
+    align-items: center;
+}
+
+.article-page-meta i {
+    margin-left: 8px;
+    color: var(--accent-color);
+}
+
+.article-page-image {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.article-page-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.article-page-content {
+    line-height: 1.8;
+    color: #f0f0f0;
+    text-align: right;
+}
+
+.article-intro {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    color: #ddd;
+    line-height: 1.8;
+    border-right: 3px solid var(--accent-color);
+    padding-right: 1.5rem;
+}
+
+.article-page-content h2 {
+    font-size: 1.8rem;
+    margin: 2.5rem 0 1.5rem;
+    color: #fff;
+    position: relative;
+}
+
+.article-page-content h3 {
+    font-size: 1.4rem;
+    margin: 2rem 0 1rem;
+    color: var(--accent-color);
+}
+
+.article-page-content p {
+    margin-bottom: 1.5rem;
+}
+
+.article-page-content ul {
+    margin: 1.5rem 0;
+    padding-right: 1.5rem;
+}
+
+.article-page-content li {
+    margin-bottom: 0.8rem;
+}
+
+.article-page-actions {
+    margin-top: 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+}
+
+.article-share {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.article-share span {
+    color: #aaa;
+    font-size: 1rem;
+}
+
+.share-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.share-btn:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.related-articles {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.related-articles h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.related-article {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.related-article:last-child {
+    border-bottom: none;
+}
+
+.related-article-link {
+    display: block;
+    font-size: 1.1rem;
+    color: #ddd;
+    transition: all 0.3s ease;
+}
+
+.related-article-link:hover {
+    color: var(--accent-color);
+    transform: translateX(-5px);
+}
+
+@media (max-width: 768px) {
+    .article-page-title {
+        font-size: 2rem;
+    }
+    
+    .article-page-meta {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .article-intro {
+        font-size: 1.1rem;
+    }
+    
+    .article-page-content h2 {
+        font-size: 1.6rem;
+    }
+    
+    .article-page-content h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .articles-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .article-page-title {
+        font-size: 1.8rem;
+    }
+    
+    .article-share {
+        flex-wrap: wrap;
+    }
+}
 	</style>
 </head>
 <body>
@@ -1241,19 +1582,236 @@
             <i class="fas fa-chevron-down"></i>
         </a>
     </section>
+<!-- Articles Section -->
+<section class="articles" id="articles">
+	<h2 class="section-title">المقالات</h2>
+	<div class="articles-container">
+			<div class="article-card" data-article="1">
+					<div class="article-image">
+							<img src="article1.jpg" alt="الحبة السوداء والأداء">
+							<div class="article-overlay">
+									<span class="article-tag">جديد</span>
+							</div>
+					</div>
+					<div class="article-info">
+							<h3 class="article-title">الحبة السوداء وتأثيرها على الأداء اليومي</h3>
+							<p class="article-date"><i class="far fa-calendar-alt"></i> 1 مارس 2025</p>
+							<p class="article-excerpt">كيف تؤثر مفاهيم الحبة السوداء على حياتك اليومية وأدائك المهني والشخصي؟ اكتشف كيف يمكن لهذه المفاهيم أن تغير حياتك بشكل جذري...</p>
+							<a href="#" class="article-btn" data-article="1">اقرأ المقال</a>
+					</div>
+			</div>
+			
+			<div class="article-card" data-article="2">
+					<div class="article-image">
+							<img src="article2.jpg" alt="الحبة الحمراء والعلاقات">
+							<div class="article-overlay">
+									<span class="article-tag featured-tag">مميز</span>
+							</div>
+					</div>
+					<div class="article-info">
+							<h3 class="article-title">كيف تفهم العلاقات من منظور الحبة الحمراء</h3>
+							<p class="article-date"><i class="far fa-calendar-alt"></i> 28 فبراير 2025</p>
+							<p class="article-excerpt">دليل شامل لفهم العلاقات بين الجنسين من منظور الحبة الحمراء. تعرف على الديناميكيات الحقيقية التي تحكم العلاقات وكيفية التعامل معها...</p>
+							<a href="#" class="article-btn" data-article="2">اقرأ المقال</a>
+					</div>
+			</div>
+	</div>
+</section>
+
+<!-- Article Pages Container (Hidden by Default) -->
+<div id="article-pages-container" class="article-pages-container" style="display: none;">
+	<!-- Article Page 1 -->
+	<div id="article-page-1" class="article-page">
+			<div class="article-page-header">
+					<div class="article-back-btn">
+							<a href="#" id="back-to-main"><i class="fas fa-arrow-right"></i> العودة للرئيسية</a>
+					</div>
+					<h1 class="article-page-title">حقيقة الريد بيل والبلاك بيل</h1>
+					<div class="article-page-meta">
+							<span class="article-page-author"><i class="fas fa-user"></i> د. أحمد الجن</span>
+							<span class="article-page-date"><i class="far fa-calendar-alt"></i> 1 مارس 2025</span>
+							<span class="article-page-views"><i class="fas fa-eye"></i> 1,240 مشاهدة</span>
+					</div>
+			</div>
+			
+			<div class="article-page-image">
+					<img src="article1.jpg" alt="الحبة السوداء والأداء">
+			</div>
+			
+			<div class="article-page-content">
+					<p class="article-intro">يظنون أن الريد بيل / البلاك بيل .. دعوه أو حركه أو جماعه! كلاما ليس له أساس من الصحة .. الريد بيل والبلاك بيل هي فقط (افكار ومعلومات توعويه) تخص الرجال .. تكشف لك حقائق الأمور التي لطالما عاش البعض لاخفائها عنك.</p>
+					
+					<h2>ما هي حقيقة الريد بيل والبلاك بيل؟</h2>
+					<p>الريد بيل والبلاك بيل ليست دعوة أو حركة أو جماعة كما يظن البعض. إنها ببساطة أفكار ومعلومات توعوية تخص الرجال، هدفها كشف الحقائق التي طالما تم إخفاؤها عنك.</p>
+					
+					<p>من خلال هذه الأفكار، يمكنك:</p>
+					<ul>
+							<li>كشف ألاعيب النساء المعاصرات وطريقة تفكيرهن وخططهن لك وسيكولوجيتهن</li>
+							<li>تعلم كيفية تطوير الذات والشخصية والمظهر</li>
+							<li>التمكن من قراءة ما بين السطور والرسائل الخفية</li>
+							<li>وغيرها من الأمور الشيقة والمهمة لحياة الرجل المعاصر</li>
+					</ul>
+					
+					<h2>الآثار الجانبية</h2>
+					
+					<p>لكن يجب أن تكون على دراية بأن لهذه المعرفة آثاراً جانبية قد تكون شديدة:</p>
+					
+					<p><strong>اعراضها الجانبيه شديده حد الموت! ستصيبك بالصدمه والنكران وبعض الأمور الأخري المتعبه .. ولكن إذا قاومت هذه الأحاسيس .. صدقني اخي الرجل .. ستصبح إنساناً اخر .. ستصبح ما لم تكن عليه يوماً.</strong></p>
+					
+					<h2>كيف تؤثر هذه الأفكار على حياتك؟</h2>
+					
+					<h3>1. فهم ديناميكيات العلاقات</h3>
+					<p>عندما تتبنى هذه الأفكار، ستبدأ في فهم الديناميكيات الحقيقية للعلاقات بين الجنسين. ستدرك أن الكثير مما تعلمته عن العلاقات من المجتمع والإعلام هو مجرد أوهام لا تمت للواقع بصلة.</p>
+					
+					<h3>2. تطوير الذات</h3>
+					<p>ستبدأ في التركيز على تطوير ذاتك بدلاً من البحث المستمر عن الرضا الخارجي. ستعمل على تحسين مظهرك البدني، وتطوير مهاراتك الاجتماعية والمهنية، وبناء استقلالية مالية وعاطفية.</p>
+					
+					<h3>3. الاستقلالية الفكرية</h3>
+					<p>ستتحرر من الأفكار المفروضة عليك، وستبدأ في التفكير لنفسك. ستصبح قادراً على تحليل المواقف والأحداث بشكل موضوعي، دون التأثر بالضغوط الاجتماعية أو العاطفية.</p>
+					
+					<h2>التحديات التي ستواجهها</h2>
+					
+					<h3>1. صدمة الواقع</h3>
+					<p>عندما تبدأ في رؤية الواقع كما هو، قد تشعر بالصدمة والإنكار. هذه ردود فعل طبيعية عندما تكتشف أن العالم ليس كما كنت تعتقد.</p>
+					
+					<h3>2. العزلة</h3>
+					<p>قد تشعر بالعزلة في البداية، لأن أفكارك ستختلف عن أفكار معظم الناس من حولك. قد لا يفهمك الآخرون، وقد يستهزئون بأفكارك الجديدة.</p>
+					
+					<h3>3. التكيف مع الواقع الجديد</h3>
+					<p>سيكون عليك إعادة تقييم الكثير من قراراتك وعلاقاتك في ضوء معرفتك الجديدة. هذه العملية قد تكون مؤلمة، لكنها ضرورية للنمو والتطور.</p>
+					
+					<h2>النصيحة النهائية</h2>
+					
+					<p>رغم كل التحديات والصعوبات التي قد تواجهها في رحلتك مع أفكار الريد بيل والبلاك بيل، فإن النتيجة النهائية تستحق كل هذا العناء. ستصبح نسخة أفضل وأقوى من نفسك، وستتمكن من التحكم في حياتك بشكل لم تتخيله من قبل.</p>
+					
+					<p><strong>ابتلع حبتك الحمراء والسوداء فورا وانتظر وتأهب للمجريات القادمة!</strong></p>
+			</div>
+			
+			<div class="article-page-actions">
+					<div class="article-share">
+							<span>مشاركة المقال:</span>
+							<a href="#" class="share-btn"><i class="fab fa-facebook-f"></i></a>
+							<a href="#" class="share-btn"><i class="fab fa-twitter"></i></a>
+							<a href="#" class="share-btn"><i class="fab fa-whatsapp"></i></a>
+					</div>
+					
+					<div class="related-articles">
+							<h3>مقالات ذات صلة</h3>
+							<div class="related-article">
+									<a href="#" class="related-article-link" data-article="2">كيف تفهم العلاقات من منظور الحبة الحمراء</a>
+							</div>
+					</div>
+			</div>
+	</div>
+	
+	<!-- Article Page 2 -->
+	<div id="article-page-2" class="article-page">
+			<div class="article-page-header">
+					<div class="article-back-btn">
+							<a href="#" id="back-to-main-2"><i class="fas fa-arrow-right"></i> العودة للرئيسية</a>
+					</div>
+					<h1 class="article-page-title">معرفة قدر نفسك جيداً - رحلة التطوير الذاتي</h1>
+					<div class="article-page-meta">
+							<span class="article-page-author"><i class="fas fa-user"></i> د. أحمد الجن</span>
+							<span class="article-page-date"><i class="far fa-calendar-alt"></i> 28 فبراير 2025</span>
+							<span class="article-page-views"><i class="fas fa-eye"></i> 2,345 مشاهدة</span>
+					</div>
+			</div>
+			
+			<div class="article-page-image">
+					<img src="article2.jpg" alt="الحبة الحمراء والعلاقات">
+			</div>
+			
+			<div class="article-page-content">
+					<p class="article-intro">عزيزي القارئ .. جاي اكلمك النهارده عن حاجه اتعلمتها زمان اوي .. حاجه يمكن من اكتر الحاجات ال هترسم ملامح شخصيتك مستقبلا بالمعني الحرفي .. ليا فيها تجارب كتير وحابب انقلهالك..</p>
+					
+					<h2>معرفة قدر نفسك جيداً</h2>
+					<p>الا وهي <strong>معرفه قدر نفسك جيدا عن استحقاق وليس علي باطل .. وعدم الانسياق للالعيب اللفظيه من قبل المحيطين</strong>!!!!
+					</p>
+					
+					<p>كلام مجعلص؟؟ ولا مفهوم؟؟ اظن مفهوم</p>
+					
+					<h2>قوتك الداخلية</h2>
+					
+					<p>انت شاطر ف كذا حاجه وموهوب وقوي وعندك إمكانيات مرعبه .. مش عند ال حواليك .. وواحد جه قالك يا فاشل !!</p>
+					
+					<p>هل هتتاثر نفسيا!! هل كلامو طفاك وخلاك مسلوب الشغف!! هل بعد كلامو ده الدنيا وقفت وخلصت!!</p>
+					
+					<p>تبقي عبيط لو حصلك كدا..</p>
+					
+					<h2>اعرف قيمة نفسك</h2>
+					
+					<p>لا انت راجل عارف امكانياتك كويس جدا وعارف قيمه نفسك .. ولسه الظروف محكمتيش انك تلمع وتنجح .. رزقك مجاش .. سعيك في حاجات مجبش همه .. مش مكتوبلك النهارده حاجه ترضيك .. بس بكرا يا عالم .. </p>
+					
+					<p><strong>فلا تتأثر بكلام ملوش اي فايده ( ممكن يندرج تحت تعريف تيكتيكات العار )!</strong></p>
+					
+					<h2>أهمية التواضع في النجاح</h2>
+					
+					<p>وخد بالك في نقطه مهمه - ان ربنا كرمك في يوم من الايام .. وجت الحياه في صالحك .. كن مهذبا في كلامك ونصيحتك مع الناس .. كن مهذبا في معاملاتك وطريقتك مع المحيطين بيك .. متحرجش حد ولا تقلل من قدر حد .. بالعكس خليك بسيط!!</p>
+					
+					<h2>رحلة معرفة الذات</h2>
+					
+					<p>معرفة قدر نفسك تبدأ من الداخل. يجب أن تعرف نقاط قوتك الحقيقية وتؤمن بها، لكن في نفس الوقت أن تكون واعياً بنقاط ضعفك وتعمل على تحسينها. هذا التوازن هو المفتاح للنمو الشخصي والثقة الحقيقية بالنفس.</p>
+					
+					<h3>كيف تكتشف قدر نفسك الحقيقي؟</h3>
+					
+					<ul>
+							<li><strong>التقييم الصادق:</strong> اجلس مع نفسك وقيّم مهاراتك وقدراتك بصدق، بعيداً عن الغرور أو التقليل من الذات</li>
+							<li><strong>طلب الملاحظات:</strong> اطلب رأي الأشخاص الصادقين في حياتك، الذين يهتمون بمصلحتك حقاً</li>
+							<li><strong>التجربة والممارسة:</strong> جرب أشياء جديدة لتكتشف مواهب ربما لم تكن تعلم أنك تمتلكها</li>
+							<li><strong>الاحتفاء بالإنجازات:</strong> احتفظ بسجل لإنجازاتك، مهما كانت صغيرة، لتذكر نفسك بقدراتك في أوقات الشك</li>
+					</ul>
+					
+					<h3>لماذا يحاول البعض التقليل من قيمتك؟</h3>
+					
+					<p>قد يحاول البعض التقليل من قيمتك لأسباب مختلفة:</p>
+					
+					<ul>
+							<li>الشعور بالتهديد من نجاحاتك أو إمكانياتك</li>
+							<li>محاولة زعزعة ثقتك بنفسك ليشعروا بالتفوق</li>
+							<li>الإحباط من فشلهم الشخصي وإسقاطه عليك</li>
+							<li>عدم فهمهم لطريقة تفكيرك أو أسلوب حياتك</li>
+					</ul>
+					
+					<h2>النصيحة النهائية</h2>
+					
+					<p>في النهاية، أنت وحدك من يحدد قيمتك الحقيقية. لا تسمح لكلمات الآخرين أن تحددك أو تثنيك عن طريقك. اعرف نفسك جيداً، وآمن بقدراتك، واستمر في العمل على تطوير ذاتك.</p>
+					
+					<p><strong>ابتلع حبتك الحمراء والسوداء فورا وانتظر وتأهب للمجريات القادمه!!</strong></p>
+			</div>
+			
+			<div class="article-page-actions">
+					<div class="article-share">
+							<span>مشاركة المقال:</span>
+							<a href="#" class="share-btn"><i class="fab fa-facebook-f"></i></a>
+							<a href="#" class="share-btn"><i class="fab fa-twitter"></i></a>
+							<a href="#" class="share-btn"><i class="fab fa-whatsapp"></i></a>
+					</div>
+					
+					<div class="related-articles">
+							<h3>مقالات ذات صلة</h3>
+							<div class="related-article">
+									<a href="#" class="related-article-link" data-article="1">الحبة السوداء وتأثيرها على الأداء اليومي</a>
+							</div>
+					</div>
+			</div>
+	</div>
+</div>
+
     <!-- Books Section -->
 <section class="books" id="books">
 	<h2 class="section-title">مكتبة GN</h2>
 	<div class="book-container">
 			<div class="book-card">
 					<div class="book-cover">
-							<img src="./gn.jpg" alt="Book Cover">
+							<img src="./gn.png" alt="Book Cover">
 							<div class="book-overlay">
 									<span class="bestseller-tag">الأكثر مبيعًا</span>
 							</div>
 					</div>
 					<div class="book-info">
 							<h3 class="book-title">فيفتي شيدز اوف جن</h3>
+							<h3 class="book-title">الوهم الأزرق والحقيقة السوداء</h3>
 							<p class="book-author">بقلم: د. احمد الجن</p>
 							<div class="book-rating">
 									<i class="fas fa-star"></i>
@@ -1412,6 +1970,111 @@
         <p class="copyright">© 2025 GN. جميع الحقوق محفوظة.</p>
     </footer>
 		<script>
+			// Article functionality
+// Article functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Add Articles link to navbar
+    const navLinks = document.querySelector('.nav-links');
+    const contactLink = document.querySelector('a[href="#contact"]');
+    
+    const articlesLink = document.createElement('a');
+    articlesLink.href = '#articles';
+    articlesLink.className = 'nav-link';
+    articlesLink.textContent = 'المقالات';
+    
+    navLinks.insertBefore(articlesLink, contactLink);
+    
+    // Article card click handlers
+    const articleCards = document.querySelectorAll('.article-card');
+    const articleBtns = document.querySelectorAll('.article-btn');
+    const articlePages = document.querySelectorAll('.article-page');
+    const mainContent = document.querySelectorAll('section:not(.article-pages-container)');
+    const articleContainer = document.getElementById('article-pages-container');
+    
+    // Function to show article
+    function showArticle(articleId) {
+        // Hide all main content
+        mainContent.forEach(section => {
+            section.style.display = 'none';
+        });
+        
+        // Hide all article pages
+        articlePages.forEach(page => {
+            page.style.display = 'none';
+        });
+        
+        // Show article container
+        articleContainer.style.display = 'block';
+        
+        // Show the selected article
+        const selectedArticle = document.getElementById(`article-page-${articleId}`);
+        if (selectedArticle) {
+            selectedArticle.style.display = 'block';
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+    
+    // Function to return to main page
+    function returnToMain() {
+        // Hide article container
+        articleContainer.style.display = 'none';
+        
+        // Show all main content
+        mainContent.forEach(section => {
+            section.style.display = 'block';
+        });
+        
+        // Scroll to top of page
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    // Add click events to article cards
+    articleCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            if (!e.target.classList.contains('article-btn')) {
+                const articleId = this.getAttribute('data-article');
+                showArticle(articleId);
+            }
+        });
+    });
+    
+    // Add click events to read more buttons
+    articleBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const articleId = this.getAttribute('data-article');
+            showArticle(articleId);
+        });
+    });
+    
+    // Add click events to back buttons
+    document.getElementById('back-to-main').addEventListener('click', function(e) {
+        e.preventDefault();
+        returnToMain();
+    });
+    
+    document.getElementById('back-to-main-2').addEventListener('click', function(e) {
+        e.preventDefault();
+        returnToMain();
+    });
+    
+    // Add click events to related article links
+    const relatedLinks = document.querySelectorAll('.related-article-link');
+    relatedLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const articleId = this.getAttribute('data-article');
+            showArticle(articleId);
+        });
+    });
+    
+    // Add click event to logo to return to main page
+    document.querySelector('.navbar .logo').addEventListener('click', function(e) {
+        e.preventDefault();
+        returnToMain();
+    });
+});
 			// Handle form submission
 			document.querySelector('.contact-form').addEventListener('submit', function(e) {
 					e.preventDefault();
